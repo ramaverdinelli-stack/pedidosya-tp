@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica de la página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis de PedidosYa · Trabajo Final</title>
+  <meta name="description" content="Trabajo final de Comercialización Internacional: Análisis de PedidosYa. Instituto de Capacitación Aduanera, Octubre 2026.">
+
+  <!-- Tipografía Montserrat desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Nuestros estilos (el ?v= sirve para que el navegador no use una versión vieja) -->
+  <link rel="stylesheet" href="css/styles.css?v=20261002">
+</head>
+<body>
+
+  <!-- Enlace oculto para quien navega con teclado: salta directo al contenido -->
+  <a class="skip-link" href="#introduccion">Saltar al contenido</a>
+
+  <!-- ============================================================
+       MENÚ FIJO SUPERIOR
+       ============================================================ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="#inicio" aria-label="Volver al inicio">
+        <span class="nav__dot"></span>
+        <span>Análisis de PedidosYa</span>
+      </a>
+
+      <!-- Botón hamburguesa (solo se ve en celular) -->
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Secciones">
+        <a href="#marketing">Las 4P del Marketing</a>
+        <a href="#foda">Análisis FODA</a>
+        <a href="#segmentacion">Segmentación y Etapas</a>
+        <a href="#posicionamiento">Posicionamiento y Nichos</a>
+        <a href="#investigacion">Investigación de Mercado</a>
+        <a href="#estrategias">Estrategias de Posicionamiento</a>
+      </nav>
+    </div>
+    <!-- Barrita roja que muestra cuánto se leyó de la página -->
+    <div class="nav__progress" id="navProgress"></div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         1. HERO (portada)
+         ============================================================ -->
+    <section class="hero" id="inicio">
+      <!-- Círculos decorativos de fondo -->
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="hero__meta hero-anim">Comercialización Internacional,  2do Cuatrimestre.</p>
+          <p class="hero__meta hero__meta--inst hero-anim">Instituto de Capacitación Aduanera.</p>
+          <h1 class="hero__title hero-anim">Análisis de <span>PedidosYa.</span></h1>
+          <p class="hero__date hero-anim">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Octubre 2026.
+          </p>
+          <a class="btn btn--primary hero-anim" href="#introduccion">
+            Ver el análisis
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          </a>
+        </div>
+
+        <!-- Logo: siempre desde el archivo de imagen.
+             Si no existe, "onerror" agrega la clase is-missing y se ve un bloque con el nombre del archivo -->
+        <div class="hero__visual">
+          <figure class="media media--logo" data-file="img/logo-pedidosya (2).png" id="heroLogo">
+            <img src="img/logo-pedidosya%20(2).png" alt="Logo de PedidosYa" onerror="this.parentNode.classList.add('is-missing')">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. INTRODUCCIÓN
+         ============================================================ -->
+    <section class="section" id="introduccion">
+      <div class="container intro">
+        <div class="intro__text reveal">
+          <p class="eyebrow">Introducción</p>
+          <p class="lead">
+            <strong>Pedidos Ya</strong> es una plataforma de delivery que conecta consumidores con
+            establecimientos como restaurantes, supermercados, farmacias, kioscos y
+            comercios varios. En el mercado local, la plataforma aplica estrategias claras de
+            Producto, Precio, Plaza y Promoción, en los cuales va a buscar diferenciarse por
+            conveniencia, rapidez y variedad.
+          </p>
+        </div>
+        <figure class="media media--rounded reveal" data-file="img/banner-comida.jpg">
+          <img src="img/banner-comida.jpg" alt="Banner de PedidosYa con comida" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. ÍNDICE (6 tarjetas clickeables)
+         ============================================================ -->
+    <section class="section section--tint" id="indice">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Recorrido</p>
+          <h2 class="section-title">Índice:</h2>
+        </div>
+
+        <div class="index-grid">
+          <a class="index-card reveal" href="#marketing">
+            <span class="index-card__num">1.</span>
+            <span class="index-card__title">Las 4P del Marketing</span>
+            <span class="index-card__who">(Ivan)</span>
+            <svg class="ico index-card__arrow" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="index-card reveal" href="#foda">
+            <span class="index-card__num">2.</span>
+            <span class="index-card__title">Análisis FODA</span>
+            <span class="index-card__who">(Esmeralda)</span>
+            <svg class="ico index-card__arrow" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="index-card reveal" href="#segmentacion">
+            <span class="index-card__num">3.</span>
+            <span class="index-card__title">Segmentación y Etapas</span>
+            <span class="index-card__who">(Luciano)</span>
+            <svg class="ico index-card__arrow" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="index-card reveal" href="#posicionamiento">
+            <span class="index-card__num">4.</span>
+            <span class="index-card__title">Posicionamiento y Nichos</span>
+            <span class="index-card__who">(René)</span>
+            <svg class="ico index-card__arrow" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="index-card reveal" href="#investigacion">
+            <span class="index-card__num">5.</span>
+            <span class="index-card__title">Investigación de Mercado</span>
+            <span class="index-card__who">(Luz)</span>
+            <svg class="ico index-card__arrow" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="index-card reveal" href="#estrategias">
+            <span class="index-card__num">6.</span>
+            <span class="index-card__title">Estrategias de Posicionamiento</span>
+            <span class="index-card__who">(Rama)</span>
+            <svg class="ico index-card__arrow" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. LAS 4P DEL MARKETING (pestañas)
+         Sin JavaScript se ven las 4 pestañas una debajo de otra.
+         Con JavaScript se muestra solo la pestaña elegida.
+         ============================================================ -->
+    <section class="section" id="marketing">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="badge">1</span> Responsable: Ivan</p>
+          <h2 class="section-title">Las 4P del Marketing</h2>
+        </div>
+
+        <div class="tabs" data-tabs>
+          <!-- Botones de las pestañas -->
+          <div class="tabs__list reveal" role="tablist" aria-label="Las 4P">
+            <button class="tabs__btn is-active" role="tab" id="btn-producto" aria-selected="true" aria-controls="tab-producto">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Producto
+            </button>
+            <button class="tabs__btn" role="tab" id="btn-precio" aria-selected="false" aria-controls="tab-precio">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+              Precio
+            </button>
+            <button class="tabs__btn" role="tab" id="btn-plaza" aria-selected="false" aria-controls="tab-plaza">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Plaza
+            </button>
+            <button class="tabs__btn" role="tab" id="btn-promocion" aria-selected="false" aria-controls="tab-promocion">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              Promoción
+            </button>
+          </div>
+
+          <!-- ---------- PESTAÑA: PRODUCTO ---------- -->
+          <div class="tabs__panel is-active" role="tabpanel" id="tab-producto" aria-labelledby="btn-producto">
+            <div class="panel-grid">
+              <div class="panel-card">
+                <h3 class="panel-title">1. Producto</h3>
+                <p class="panel-q">¿Cómo lo gestiona Pedidos Ya?</p>
+                <p>Dentro de su <strong>cartera de productos</strong>, podemos encontrar en la aplicación:</p>
+                <ul class="chips">
+                  <li>- Comida.</li>
+                  <li>- Supermercados.</li>
+                  <li>- Farmacias.</li>
+                  <li>- Kioscos.</li>
+                  <li>- Productos para mascotas.</li>
+                  <li>- Bebidas alcohólicas y no alcohólicas.</li>
+                  <li>- Sistema de envío y retiro de paquetes de manera particular.</li>
+                </ul>
+                <p>
+                  La <strong>diferenciación</strong> con la que la marca busca destacarse se basa en brindar
+                  un servicio de entregas rápidas, seguimiento en tiempo real de los
+                  pedidos y accesibilidad a múltiples métodos de pago, incluyendo tarjetas
+                  de crédito, débito, efectivo y carga de saldo dentro de la aplicación, esta
+                  última opción también disponible como beneficio corporativo. Asimismo,
+                  ofrece su suscripción Pedidos Ya Plus, que brinda beneficios exclusivos,
+                  como envío gratis en la gran mayoría de los locales asociados y
+                  descuentos en productos seleccionados de cada establecimiento.
+                </p>
+                <p>
+                  La <strong>marca</strong>, en sí misma, posee una identidad visual muy reconocible y
+                  establecida en nuestro país, ya que logró posicionarse fuertemente en el
+                  mercado gracias a factores como la rapidez de las entregas, la comodidad
+                  en el uso del servicio y la amplia disponibilidad de comercios y productos.
+                </p>
+                <p>
+                  La <strong>presentación</strong> de la plataforma se realiza a través de la aplicación para
+                  dispositivos móviles y también mediante su página web. Ambas
+                  presentan una interfaz simple e intuitiva, en la que se pueden visualizar
+                  los locales disponibles según la ubicación del cliente. Asimismo, permite
+                  observar la calificación general de cada establecimiento, basada en las
+                  opiniones y experiencias de los usuarios, junto con los tiempos estimados
+                  de entrega de cada pedido. De esta manera, la plataforma facilita la
+                  navegación y el proceso de selección y compra por parte del consumidor.
+                </p>
+                <p>
+                  Pedidos Ya amplió su propuesta de valor al incorporar supermercados,
+                  farmacias y otros comercios dentro de una misma aplicación. Además, la
+                  incorporación de la suscripción Pedidos Ya Plus y el seguimiento en
+                  tiempo real de los pedidos contribuyeron a mejorar la experiencia del
+                  usuario, incrementando la comodidad y fortaleciendo la fidelización de los
+                  clientes.
+                </p>
+              </div>
+              <figure class="media media--rounded media--tall" data-file="img/banner-market.jpg">
+                <img src="img/banner-market.jpg" alt="Banner de PedidosYa Market" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+              </figure>
+            </div>
+
+            <!-- Tabla "Acciones destacadas e impacto" convertida en tarjetas -->
+            <h4 class="actions-title">Acciones destacadas e impacto</h4>
+            <div class="actions" role="table" aria-label="Acciones destacadas e impacto - Producto">
+              <div class="actions__head" role="row">
+                <span role="columnheader">Acción</span>
+                <span role="columnheader">Impacto en el consumidor</span>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Incorporación de supermercados y farmacias</p>
+                <p class="action__impact" role="cell">Permite resolver múltiples necesidades desde una sola aplicación.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Membresía “Pedidos Ya Plus”</p>
+                <p class="action__impact" role="cell">Fideliza clientes mediante envíos gratuitos y descuentos exclusivos.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Seguimiento del repartidor en tiempo real</p>
+                <p class="action__impact" role="cell">Reduce la incertidumbre y mejora la experiencia de compra.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---------- PESTAÑA: PRECIO ---------- -->
+          <div class="tabs__panel" role="tabpanel" id="tab-precio" aria-labelledby="btn-precio">
+            <div class="panel-card">
+              <h3 class="panel-title">2. Precio</h3>
+              <p class="callout">El precio es el único elemento del marketing mix que genera ingresos y puede modificarse rápidamente.</p>
+              <h4 class="panel-sub">Estrategia de precios de Pedidos Ya</h4>
+              <p>
+                Pedidos Ya utiliza una estrategia de precio dinámico, adaptándose a la demanda,
+                la distancia y la competencia.
+              </p>
+              <p>Los factores que influyen en el precio son los siguientes:</p>
+              <div class="factor-grid">
+                <div class="factor"><span class="factor__letter">a.</span><p>Costo de distribución: El envío puede variar según la distancia y la disponibilidad de los repartidores.</p></div>
+                <div class="factor"><span class="factor__letter">b.</span><p>Competencia entre comercios: Cada local define sus precios y promociones dentro de la plataforma.</p></div>
+                <div class="factor"><span class="factor__letter">c.</span><p>Estrategias promocionales: como por ejemplo cupones, descuentos bancarios, y ofertas temporales, las cuales modifican el precio final.</p></div>
+                <div class="factor"><span class="factor__letter">d.</span><p>Objetivo Comercial: Captar nuevos usuarios y aumentar la frecuencia de compra de los mismos.</p></div>
+              </div>
+            </div>
+
+            <h4 class="actions-title">Acciones destacadas e impacto</h4>
+            <div class="actions" role="table" aria-label="Acciones destacadas e impacto - Precio">
+              <div class="actions__head" role="row">
+                <span role="columnheader">Acción</span>
+                <span role="columnheader">Impacto en el consumidor</span>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Cupones de bienvenida</p>
+                <p class="action__impact" role="cell">Incentiva la/s primera/s compra/s</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Descuentos con bancos y billeteras</p>
+                <p class="action__impact" role="cell">Disminuye el precio percibido y aumenta las ventas.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Envíos gratis con Plus</p>
+                <p class="action__impact" role="cell">Motiva la suscripción y la recompra frecuente.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Promociones por horario</p>
+                <p class="action__impact" role="cell">Incrementa pedidos en momentos de menor frecuencia</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---------- PESTAÑA: PLAZA ---------- -->
+          <div class="tabs__panel" role="tabpanel" id="tab-plaza" aria-labelledby="btn-plaza">
+            <div class="panel-card">
+              <h3 class="panel-title">3. Plaza (Distribución)</h3>
+              <p class="callout">La plaza y/o distribución consiste en hacer llegar el producto al consumidor de manera eficiente.</p>
+              <h4 class="panel-sub">¿Cómo distribuye Pedidos Ya?</h4>
+              <p>Los 4 elementos de la distribución:</p>
+              <div class="factor-grid">
+                <div class="factor">
+                  <span class="factor__letter">a.</span>
+                  <div><h5>Canales de distribución</h5>
+                  <p>Restaurantes, supermercados y comercios asociados venden al consumidor mediante la plataforma, mientras repartidores independientes realizan la entrega.</p></div>
+                </div>
+                <div class="factor">
+                  <span class="factor__letter">b.</span>
+                  <div><h5>Planificación</h5>
+                  <p>La app asigna automáticamente el repartidor más conveniente según ubicación, demanda y tiempos estimados.</p></div>
+                </div>
+                <div class="factor">
+                  <span class="factor__letter">c.</span>
+                  <div><h5>Distribución física</h5>
+                  <p>Utiliza dark stores y centros logísticos para Pedidos Ya Market, permitiendo entregas en pocos minutos en muchas ciudades.</p></div>
+                </div>
+                <div class="factor">
+                  <span class="factor__letter">d.</span>
+                  <div><h5>Merchandising digital</h5>
+                  <p>Los comercios destacan productos mediante banners, categorías, fotografías y posiciones preferenciales dentro de la aplicación.</p></div>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="actions-title">Acciones destacadas e impacto</h4>
+            <div class="actions" role="table" aria-label="Acciones destacadas e impacto - Plaza">
+              <div class="actions__head" role="row">
+                <span role="columnheader">Acción</span>
+                <span role="columnheader">Impacto en el consumidor</span>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Cobertura en numerosas ciudades argentinas</p>
+                <p class="action__impact" role="cell">Mayor accesibilidad al servicio.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Pedidos Ya Market</p>
+                <p class="action__impact" role="cell">Compras de supermercado con entregas muy rápidas.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Recomendaciones según ubicación</p>
+                <p class="action__impact" role="cell">Facilita encontrar opciones cercanas y reduce tiempos de entrega.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---------- PESTAÑA: PROMOCIÓN ---------- -->
+          <div class="tabs__panel" role="tabpanel" id="tab-promocion" aria-labelledby="btn-promocion">
+            <div class="panel-card">
+              <h3 class="panel-title">4. Promoción</h3>
+              <p class="callout">La promoción busca comunicar los beneficios del producto y estimular la compra.</p>
+              <p>Las principales estrategias promocionales que se usan como herramientas de comunicación son las siguientes:</p>
+              <div class="factor-grid">
+                <div class="factor">
+                  <span class="factor__letter">a.</span>
+                  <div><h5>Publicidad digital:</h5>
+                  <p>Campañas en televisión, YouTube, Instagram, TikTok y vía pública con foco en rapidez y comodidad.</p></div>
+                </div>
+                <div class="factor">
+                  <span class="factor__letter">b.</span>
+                  <div><h5>Notificaciones personalizadas:</h5>
+                  <p>La aplicación envía ofertas basadas en hábitos de consumo y horarios del usuario.</p></div>
+                </div>
+                <div class="factor">
+                  <span class="factor__letter">c.</span>
+                  <div><h5>Promociones comerciales:</h5>
+                  <p>2x1, descuentos porcentuales, envío gratis y beneficios exclusivos para usuarios Plus.</p></div>
+                </div>
+                <div class="factor">
+                  <span class="factor__letter">d.</span>
+                  <div><h5>Alianzas y/o colaboraciones con marcas:</h5>
+                  <p>Acuerdos con bancos, tarjetas y billeteras virtuales para ofrecer reintegros y descuentos.</p></div>
+                </div>
+              </div>
+            </div>
+
+            <h4 class="actions-title">Acciones destacadas e impacto</h4>
+            <div class="actions" role="table" aria-label="Acciones destacadas e impacto - Promoción">
+              <div class="actions__head" role="row">
+                <span role="columnheader">Acción</span>
+                <span role="columnheader">Impacto en el consumidor</span>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Cupones personalizados</p>
+                <p class="action__impact" role="cell">Aumenta la probabilidad de compra.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Campañas en redes sociales</p>
+                <p class="action__impact" role="cell">Mantiene en constante visualización la marca en sí.</p>
+              </div>
+              <div class="action" role="row">
+                <p class="action__what" role="cell">Beneficios con bancos</p>
+                <p class="action__impact" role="cell">Genera percepción de ahorro y favorece la elección de Pedidos Ya.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- fin .tabs -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. ANÁLISIS FODA (cuadrícula 2x2 con acordeones)
+         Usamos <details>: se abre y cierra solo, sin necesidad de JavaScript.
+         ============================================================ -->
+    <section class="section section--tint" id="foda">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="badge">2</span> Responsable: Esmeralda</p>
+          <h2 class="section-title">2. Análisis FODA - Pedido Ya</h2>
+        </div>
+
+        <div class="foda">
+          <!-- ---------- FORTALEZAS ---------- -->
+          <div class="foda__box foda__box--f reveal">
+            <h3 class="foda__title"><span class="foda__letter">F</span> FORTALEZAS</h3>
+
+            <details class="acc">
+              <summary>1. Plataforma tecnológica y sistema de delivery</summary>
+              <div class="acc__body">
+                <p>Una de las principales fortalezas de PedidosYa es que cuenta con una plataforma tecnológica que permite conectar a los consumidores con diferentes comercios y gestionar los pedidos. Además, la empresa cuenta con una red de repartidores para realizar las entregas, por lo que los comercios pueden utilizar este servicio sin tener que desarrollar por su cuenta toda una estructura de delivery.</p>
+                <p>Esto representa una ventaja tanto para PedidosYa como para los comercios asociados, ya que permite centralizar en una misma plataforma la recepción de pedidos, la gestión de productos y parte del proceso de entrega. La empresa también ofrece herramientas para que los comercios puedan administrar su negocio dentro de la plataforma.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>2. Variedad de comercios y productos</summary>
+              <div class="acc__body">
+                <p>Otra fortaleza es la variedad de opciones que ofrece la plataforma. PedidosYa no se limita únicamente a restaurantes, sino que también permite realizar pedidos de distintos tipos de productos y comercios.</p>
+                <p>Esta variedad hace que el usuario pueda utilizar la aplicación para diferentes necesidades y no solamente para pedir comida. Desde el punto de vista de la empresa, esto permite ampliar las situaciones en las que una persona puede recurrir a la plataforma.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>3. Herramientas para los comercios</summary>
+              <div class="acc__body">
+                <p>PedidosYa ofrece a sus comercios un Portal de Socios, desde el cual pueden administrar información de su negocio, modificar precios y productos, consultar estadísticas de ventas, gestionar promociones y recibir asistencia. También ofrece herramientas de publicidad dentro de la aplicación para aumentar la visibilidad de los comercios.</p>
+                <p>Esto representa una fortaleza porque PedidosYa no solamente funciona como un medio para recibir pedidos, sino que también brinda herramientas que ayudan a los comercios a gestionar y promocionar sus productos dentro del entorno digital.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>4. Capacidad para adaptarse a diferentes necesidades de consumo</summary>
+              <div class="acc__body">
+                <p>La plataforma puede utilizarse para distintos tipos de compras y cuenta con diferentes modalidades de entrega y pago. Además, PedidosYa permite que determinados comercios funcionen exclusivamente mediante delivery, sin necesidad de contar con un salón abierto al público.</p>
+                <p>Esto le permite adaptarse a diferentes modelos de negocio y ampliar las posibilidades de participación de comercios que buscan vender principalmente por canales digitales.</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- ---------- DEBILIDADES ---------- -->
+          <div class="foda__box foda__box--d reveal">
+            <h3 class="foda__title"><span class="foda__letter">D</span> DEBILIDADES</h3>
+
+            <details class="acc">
+              <summary>1. Dependencia de que toda la operación funcione correctamente</summary>
+              <div class="acc__body">
+                <p>Una de las debilidades de este tipo de negocio es que la experiencia final depende de que varias partes funcionen correctamente al mismo tiempo: la aplicación, el comercio, la preparación del pedido y la entrega.</p>
+                <p>Por ejemplo, si un comercio demora en aceptar o preparar un pedido, o si existe un problema durante la entrega, el usuario puede terminar teniendo una experiencia negativa aunque la aplicación haya funcionado correctamente. La propia PedidosYa establece procedimientos relacionados con pedidos demorados, incompletos o equivocados.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>2. Dependencia de los comercios asociados</summary>
+              <div class="acc__body">
+                <p>PedidosYa conecta a los consumidores con comercios independientes, por lo que una parte importante de la calidad del servicio depende también de estos establecimientos.</p>
+                <p>El comercio es quien informa los productos, precios y características del pedido y, dependiendo de la modalidad utilizada, puede ser también quien se encargue de la entrega. Por lo tanto, la empresa no controla de manera directa todos los aspectos de la experiencia del consumidor.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>3. Costos para los comercios asociados</summary>
+              <div class="acc__body">
+                <p>El modelo de PedidosYa funciona mediante el cobro de una comisión a los comercios por los pedidos realizados a través de la plataforma. La propia empresa explica que esta comisión contribuye a cubrir servicios como la logística, la tecnología y las acciones de marketing, aunque las tarifas pueden variar según el tipo de socio, su ubicación y las condiciones del mercado.</p>
+                <p>Esto puede representar una dificultad para algunos comercios, especialmente para aquellos que trabajan con márgenes de ganancia reducidos, ya que deben considerar este costo dentro de su estructura de precios.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>4. Dependencia de la tecnología y la conectividad</summary>
+              <div class="acc__body">
+                <p>Al tratarse de una plataforma digital, PedidosYa depende del correcto funcionamiento de la aplicación, los sistemas de pago, la conexión a Internet y los dispositivos utilizados por los comercios y repartidores.</p>
+                <p>Por ejemplo, la propia empresa establece que los comercios necesitan contar con conexión a Internet y un dispositivo para recibir los pedidos.</p>
+                <p>Por lo tanto, una falla tecnológica o un problema de conectividad puede afectar el funcionamiento de diferentes partes de la operación.</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- ---------- OPORTUNIDADES ---------- -->
+          <div class="foda__box foda__box--o reveal">
+            <h3 class="foda__title"><span class="foda__letter">O</span> OPORTUNIDADES</h3>
+
+            <details class="acc">
+              <summary>1. Crecimiento del comercio electrónico en Argentina</summary>
+              <div class="acc__body">
+                <p>El crecimiento del comercio electrónico representa una oportunidad importante para PedidosYa. Según la Cámara Argentina de Comercio Electrónico (CACE), durante el primer semestre de 2026 la facturación del comercio electrónico en Argentina aumentó 28% respecto del mismo período de 2025. Además, se registraron 181,5 millones de órdenes de compra, un 21% más que durante el primer semestre del año anterior.</p>
+                <p>Este crecimiento muestra que las compras por Internet tienen cada vez mayor presencia en los hábitos de consumo y genera un contexto favorable para las empresas que ofrecen servicios digitales.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>2. Importancia de Alimentos y Bebidas en el comercio electrónico</summary>
+              <div class="acc__body">
+                <p>Otro aspecto que representa una oportunidad para PedidosYa es el crecimiento de la categoría de Alimentos y Bebidas.</p>
+                <p>De acuerdo con el estudio de CACE correspondiente al primer semestre de 2026, Alimentos y Bebidas fue el rubro con mayor facturación dentro del comercio electrónico argentino y también ocupó el primer lugar en cantidad de unidades vendidas.</p>
+                <p>Esto es especialmente relevante para PedidosYa porque la plataforma tiene una fuerte presencia en el pedido y entrega de alimentos. Por lo tanto, el crecimiento de este segmento puede favorecer el desarrollo de la actividad de la empresa.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>3. Preferencia por las entregas a domicilio</summary>
+              <div class="acc__body">
+                <p>Los hábitos de los consumidores también representan una oportunidad. CACE informa que durante el primer semestre de 2026 la entrega a domicilio representó el 60% de las modalidades de entrega, mientras que el retiro en el punto de venta representó el 31%.</p>
+                <p>Esto resulta favorable para PedidosYa porque su propuesta se encuentra directamente relacionada con facilitar la entrega de productos al domicilio del consumidor.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>4. Posibilidad de ampliar el uso de la plataforma</summary>
+              <div class="acc__body">
+                <p>El crecimiento del comercio electrónico también permite que PedidosYa continúe ampliando las categorías de productos y servicios disponibles.</p>
+                <p>La posibilidad de trabajar con diferentes tipos de comercios permite que la empresa no dependa exclusivamente de los restaurantes y pueda aprovechar nuevas oportunidades dentro del comercio digital.</p>
+              </div>
+            </details>
+          </div>
+
+          <!-- ---------- AMENAZAS ---------- -->
+          <div class="foda__box foda__box--a reveal">
+            <h3 class="foda__title"><span class="foda__letter">A</span> AMENAZAS</h3>
+
+            <details class="acc">
+              <summary>1. Competencia dentro del mercado</summary>
+              <div class="acc__body">
+                <p>Una de las principales amenazas para PedidosYa es la existencia de otras plataformas que ofrecen servicios similares. La competencia puede producir una disputa por consumidores, comercios y repartidores, y también generar la necesidad de ofrecer promociones, descuentos y mejoras constantes en el servicio.</p>
+                <p>Por este motivo, PedidosYa debe mantener una propuesta atractiva para los usuarios y, al mismo tiempo, conservar una relación conveniente para los comercios que forman parte de su plataforma.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>2. Cambios en el contexto económico</summary>
+              <div class="acc__body">
+                <p>El contexto económico puede afectar tanto a los consumidores como a los comercios. Si los consumidores cuentan con menor poder adquisitivo, pueden reducir la frecuencia con la que realizan pedidos o priorizar productos de menor precio.</p>
+                <p>Al mismo tiempo, los comercios pueden enfrentar aumentos en sus propios costos, lo que puede afectar los precios de los productos ofrecidos mediante la plataforma.</p>
+                <p>Por lo tanto, los cambios en el contexto económico pueden influir sobre el volumen de pedidos y sobre la rentabilidad de los distintos participantes del sistema.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>3. Complejidad tributaria</summary>
+              <div class="acc__body">
+                <p>La situación tributaria también constituye un factor externo a considerar. En abril de 2026, CACE publicó un informe sobre el impacto de los regímenes de retenciones y percepciones de Ingresos Brutos en el comercio electrónico. Según la entidad, la complejidad del sistema puede afectar aspectos como los precios, la liquidez y la competitividad de las empresas que operan formalmente.</p>
+                <p>Para empresas que forman parte del comercio electrónico, este tipo de condiciones puede representar un desafío adicional para mantener la competitividad y controlar sus costos.</p>
+              </div>
+            </details>
+
+            <details class="acc">
+              <summary>4. Expectativas cada vez mayores de los consumidores</summary>
+              <div class="acc__body">
+                <p>Los consumidores esperan que las compras online sean rápidas, simples y confiables. En el caso de PedidosYa, esto significa que los usuarios esperan recibir el pedido dentro del tiempo informado y que los productos lleguen correctamente.</p>
+                <p>La propia empresa contempla situaciones como demoras, pedidos incompletos o productos equivocados dentro de sus términos y condiciones.</p>
+                <p>Por lo tanto, mantener una buena experiencia de usuario representa un desafío permanente, especialmente en un mercado donde existen diferentes alternativas para realizar compras y recibir productos a domicilio.</p>
+              </div>
+            </details>
+          </div>
+        </div><!-- fin .foda -->
+
+        <!-- Datos de OPORTUNIDADES como contadores animados.
+             El número final ya está escrito en el HTML: si el JS falla, igual se lee el dato correcto. -->
+        <div class="stats reveal" aria-label="Oportunidades en números">
+          <p class="stats__label">Oportunidades · datos de la Cámara Argentina de Comercio Electrónico (CACE), primer semestre de 2026</p>
+          <div class="stats__grid">
+            <div class="stat">
+              <p class="stat__num"><span class="counter" data-target="28" data-decimals="0">28</span>%</p>
+              <p class="stat__txt">la facturación del comercio electrónico en Argentina aumentó 28% respecto del mismo período de 2025</p>
+            </div>
+            <div class="stat">
+              <p class="stat__num"><span class="counter" data-target="181.5" data-decimals="1">181,5</span><small> millones</small></p>
+              <p class="stat__txt">de órdenes de compra</p>
+            </div>
+            <div class="stat">
+              <p class="stat__num"><span class="counter" data-target="21" data-decimals="0">21</span>%</p>
+              <p class="stat__txt">más que durante el primer semestre del año anterior</p>
+            </div>
+          </div>
+
+          <!-- Barras comparativas de modalidades de entrega -->
+          <div class="bars">
+            <div class="bar">
+              <div class="bar__top"><span>la entrega a domicilio</span><strong><span class="counter" data-target="60" data-decimals="0">60</span>%</strong></div>
+              <div class="bar__track"><div class="bar__fill bar__fill--red" style="--w:60%"></div></div>
+            </div>
+            <div class="bar">
+              <div class="bar__top"><span>el retiro en el punto de venta</span><strong><span class="counter" data-target="31" data-decimals="0">31</span>%</strong></div>
+              <div class="bar__track"><div class="bar__fill bar__fill--blue" style="--w:31%"></div></div>
+            </div>
+          </div>
+          <p class="stats__note">Alimentos y Bebidas fue el rubro con mayor facturación dentro del comercio electrónico argentino y también ocupó el primer lugar en cantidad de unidades vendidas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. SEGMENTACIÓN Y ETAPAS
+         ============================================================ -->
+    <section class="section" id="segmentacion">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="badge">3</span> Responsable: Luciano</p>
+          <h2 class="section-title">SEGMENTACIÓN Y ETAPAS: PEDIDOS YA</h2>
+        </div>
+
+        <!-- Variables de segmentación -->
+        <h3 class="sub-title reveal">Aplicación de las Variables de Segmentación en PedidosYa</h3>
+        <p class="lead lead--sm reveal">
+          PedidosYa utiliza una <strong class="hl">segmentación multiatributos</strong>, combinando simultáneamente variables
+          geográficas, demográficas, psicográficas y conductuales para delimitar los grupos de
+          consumidores en el mercado:
+        </p>
+
+        <div class="seg-layout">
+          <div class="var-grid">
+            <article class="var-card reveal">
+              <div class="var-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <h4>Variables Geográficas:</h4>
+              <p><strong>Cobertura Urbana:</strong> Centros urbanos, capitales y municipios de media y alta densidad poblacional en Argentina y Latinoamérica.</p>
+            </article>
+            <article class="var-card reveal">
+              <div class="var-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <h4>Variables Demográficas:</h4>
+              <p><strong>Edad y Perfil:</strong> Hombres y mujeres de 18 a 55 años, abarcando estudiantes universitarios, jóvenes profesionales y adultos trabajadores.</p>
+              <p><strong>Nivel Socioeconómico y Conectividad:</strong> Niveles medio-bajo, medio y alto con acceso a celulares, conexión a internet y medios de pago digitalizados (tarjetas de crédito/débito o billeteras virtuales como <em>PedidosYa Pay</em>).</p>
+            </article>
+            <article class="var-card reveal">
+              <div class="var-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <h4>Variables Psicográficas:</h4>
+              <p><strong>Estilo de Vida:</strong> Consumidores urbanos con un ritmo de vida acelerado, altamente digitalizados, que valoran la practicidad y priorizan ganar tiempo libre por encima del esfuerzo de trasladarse o cocinar.</p>
+            </article>
+            <article class="var-card reveal">
+              <div class="var-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+              <h4>Variables Conductuales:</h4>
+              <p><strong>Beneficio Buscado:</strong> Inmediatez, comodidad y resolución urgente de necesidades de consumo diario.</p>
+              <p><strong>Lealtad:</strong> Usuarios retenidos e incentivados mediante descuentos de corto tiempo.</p>
+            </article>
+          </div>
+
+          <figure class="media media--rounded media--map reveal" data-file="img/mapa-poblacion.jpg">
+            <img src="img/mapa-poblacion.jpg" alt="Mapa de población por localidad en Argentina" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+          </figure>
+        </div>
+
+        <!-- Etapas de segmentación: línea de tiempo vertical -->
+        <h3 class="sub-title reveal">Aplicación de las Etapas de Segmentación en PedidosYa</h3>
+        <p class="lead lead--sm reveal">PedidosYa ejecuta su estrategia comercial recorriendo tres etapas operativas:</p>
+
+        <ol class="timeline">
+          <!-- Esta línea roja "crece" a medida que bajás (animación GSAP) -->
+          <span class="timeline__line" aria-hidden="true"><span class="timeline__progress" id="timelineProgress"></span></span>
+
+          <li class="step reveal">
+            <span class="step__dot">1</span>
+            <div class="step__card">
+              <h4><span class="tag">Etapa 1:</span> Identificación de Segmentos (Mapeo de la Oferta y Demanda):</h4>
+              <p>PedidosYa identifica subgrupos con necesidades específicas dentro del mercado urbano:</p>
+              <ul class="bullets">
+                <li><strong><em>Segmento Gastronómico</em></strong>: Usuarios que buscan pedir comida preparada para almuerzos o cenas sin cocinar.</li>
+                <li><strong><em>Segmento de Conveniencia Especializada</em></strong>: Clientes que requieren <u>envíos urgentes</u> de farmacia, bebidas o pet shop.</li>
+                <li><strong><em>Segmento B2B / Corporativo (PedidosYa Envíos)</em></strong>: Comercios y empresas que necesitan envíos de encomiendas o paquetería de última milla.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <span class="step__dot">2</span>
+            <div class="step__card">
+              <h4><span class="tag">Etapa 2:</span> Evaluación de Segmentos (Análisis de Atractivo y Capacidad):</h4>
+              <p>Antes de ingresar a un nuevo municipio o abrir una nueva <em>Dark Store</em>, la empresa evalúa:</p>
+              <ul class="bullets">
+                <li>Densidad poblacional y volumen estimado de pedidos por km².</li>
+                <li>Nivel de adopción de pagos digitales y penetración de e-commerce en la zona.</li>
+                <li>Capacidad logística disponible (cantidad de repartidores activos en el área).</li>
+              </ul>
+
+              <!-- Recuadro destacado: qué es una dark store -->
+              <div class="darkstore">
+                <figure class="media media--rounded" data-file="img/dark-store.jpg">
+                  <img src="img/dark-store.jpg" alt="Repartidor de PedidosYa dentro de una dark store" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+                </figure>
+                <p class="darkstore__txt"><em>(Una <strong>dark store</strong> (o tienda oscura) es un almacén cerrado al público que se dedica exclusivamente a recibir, preparar y enviar los pedidos que los clientes realizan a través de internet)</em></p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <span class="step__dot">3</span>
+            <div class="step__card">
+              <h4><span class="tag">Etapa 3:</span> Selección de Segmentos (Estrategia Comercial):</h4>
+              <p>PedidosYa selecciona el segmento urbano masivo con preferencia por la inmediatez y aplica una estrategia diferenciada por vertical (promociones específicas en restaurantes, alertas de descuento y cupones de bienvenida).</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Las 5 características -->
+        <h3 class="sub-title reveal">Características de los Segmentos de PedidosYa</h3>
+        <p class="lead lead--sm reveal">Los segmentos elegidos por PedidosYa cumplen con las cinco condiciones del mercado<sup>[3]</sup>:</p>
+
+        <div class="five-grid">
+          <article class="five reveal">
+            <div class="five__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+            <h4>Medibles:</h4>
+            <p>La empresa cuantifica el tamaño y comportamiento de cada segmento en tiempo real mediante <u>métricas</u> internas como descargas de la app, usuarios activos mensuales (MAU), volumen de transacciones por zona y mapas de calor de geolocalización.</p>
+          </article>
+          <article class="five reveal">
+            <div class="five__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+            <h4>Sustanciales:</h4>
+            <p>Representan una masa crítica urbana con un volumen diario masivo de pedidos que justifica la inversión en infraestructura tecnológica y la red de almacenes <em>dark stores</em>.</p>
+          </article>
+          <article class="five reveal">
+            <div class="five__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+            <h4>Accesibles:</h4>
+            <p>PedidosYa contacta directamente a sus segmentos objetivo a través de la aplicación móvil, notificaciones <em>push</em> personalizadas según horarios habituales de consumo y campañas de marketing digital programático.</p>
+          </article>
+          <article class="five reveal">
+            <div class="five__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg></div>
+            <h4>Diferenciables:</h4>
+            <p>Los segmentos responden de forma distinta a la propuesta de valor: quien utiliza <em>PedidosYa Market</em> reacciona ante el beneficio de la velocidad (15 minutos), mientras que el usuario de restaurantes responde a la variedad de la oferta o a promociones de precio (<em>Pido sin pensar</em>).</p>
+          </article>
+          <article class="five reveal">
+            <div class="five__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <h4>Susceptibles de Acción:</h4>
+            <p>Permiten diseñar acciones comerciales concretas, tales como lanzar cupones de descuento para reactivar usuarios inactivos, ofrecer envíos gratis a través de <em>PedidosYa Plus</em> o crear promociones en franjas horarias específicas (almuerzo o cena)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. POSICIONAMIENTO Y NICHOS (René)
+         ============================================================ -->
+    <!-- PENDIENTE: completar contenido -->
+    <section class="section section--tint" id="posicionamiento">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="badge">4</span> Responsable: René</p>
+          <h2 class="section-title">Posicionamiento y Nichos</h2>
+        </div>
+        <div class="pending reveal">
+          <span class="pending__tag">Contenido en preparación</span>
+          <!-- PENDIENTE: completar contenido (reemplazar este texto de relleno por el del trabajo) -->
+          <p>Texto de relleno. Esta sección se completará con el contenido de Posicionamiento y Nichos.</p>
+          <div class="pending__cards">
+            <div class="pending__card"><span></span><span></span><span></span></div>
+            <div class="pending__card"><span></span><span></span><span></span></div>
+            <div class="pending__card"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. INVESTIGACIÓN DE MERCADO (Luz)
+         Los 6 pasos usan la misma línea de tiempo que Segmentación.
+         ============================================================ -->
+    <section class="section" id="investigacion">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="badge">5</span> Responsable: Luz</p>
+          <h2 class="section-title">INVESTIGACIÓN DE MERCADO</h2>
+        </div>
+
+        <p class="lead lead--sm reveal">El disparador de la investigación es la de iniciar un negocio para entrar al mercado virtual ya que no estaba siendo explotado desde el ámbito gastronómico.</p>
+
+        <ol class="timeline">
+          <span class="timeline__line" aria-hidden="true"><span class="timeline__progress"></span></span>
+
+          <li class="step reveal">
+            <span class="step__dot">1</span>
+            <div class="step__card">
+              <h4><span class="tag">PRIMER PASO:</span> DEFINICIÓN DEL PROBLEMA</h4>
+              <p>Según lo que cuentan sus fundadores Ariel Burschitin y Alvaro Grarcia tenían que hacer un trabajo en facultad en el cual les pedían crear una idea de negocio. Lo primero que les vino a la mente era el problema cotidiano que presentaban al pedir un chivito (sandwich) por teléfono, siempre se encontraba ocupado o se equivocaban el pedido. A ellos se les ocurrió crear una web que les permitiera realizar pedidos de comida. Entonces necesitaban saber ¿cómo podían hacer para crear un servicio tipo mercado libre pero de comida?</p>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <span class="step__dot">2</span>
+            <div class="step__card">
+              <h4><span class="tag">SEGUNDO PASO:</span> COMPRENSIÓN DEL ESCENARIO</h4>
+              <p>Analizaron que no había una empresa que generar ese servicio y que los pedidos de comida eran por teléfono o en el local</p>
+              <p>Ellos encararon la investigación internamente debido a que no contaban con el capital para contratar una compañía especializada</p>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <span class="step__dot">3</span>
+            <div class="step__card">
+              <h4><span class="tag">TERCER PASO:</span> DISEÑO DE INVESTIGACIÓN</h4>
+              <p>En primera instancia ellos decidieron realizar una investigación exploratoria. En la cual en vez de hacer preguntas ellos intentaban comunicarse con dueños de restaurantes y amigos que pedían delivery. Quisieron probar si los restaurantes querían estar en la web. Les plantearon un diseño simple y barato porque lo presentaron como un trabajo final para la facultad.</p>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <span class="step__dot">4</span>
+            <div class="step__card">
+              <h4><span class="tag">CUARTO PASO:</span> TRABAJO DE CAMPO</h4>
+              <p>Para hacer la recolección de datos los fundadores (Ariel Burschtin, Álvaro García y Ruben Sosenke) realizaron llamas a los restaurantes ellos mismos pero al no contestar lo que hicieron fue el ¨puerta a puerta¨, se tomaron el tiempo de ir restaurante por restaurante presentando la propuesta y cargando ellos mismos los datos de cada restaurante que accedía a formar parte</p>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <span class="step__dot">5</span>
+            <div class="step__card">
+              <h4><span class="tag">QUINTO PASO:</span> PREPARACIÓN DE DATOS</h4>
+              <!-- El 40 es un contador animado (el número final ya está escrito acá) -->
+              <p class="inv-count">Gracias al trabajo de campo llegaron a juntar <span class="inv-count__num counter" data-target="40" data-decimals="0">40</span> restaurantes de montevideo</p>
+              <p>Toda la información que juntaron:</p>
+              <ul class="data-chips">
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Nombres</li>
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Direcciones</li>
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Menú</li>
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Precios</li>
+              </ul>
+              <p>La subieron a la plataforma que ellos mismos programaron. Tuvieron que limpiar y ordenar esos datos, organizarlos por ubicación y tipo de comida</p>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <span class="step__dot">6</span>
+            <div class="step__card">
+              <h4><span class="tag">SEXTO PASO:</span> ANÁLISIS DE LA INFORMACIÓN Y PREPARACIÓN DE INFORMES</h4>
+              <p>Con esos 40 restaurantes cargados vieron el funcionamiento de la página web. Si empezaba a funcionar pero en los comienzos fueron presentando problemas como que algunos restaurantes al no estar habituados a recibir los pedidos por la web no prestaban atención a las notificaciones a lo que los fundadores comenzaban a llamarlos para explicarles que estaban recibiendo pedidos.</p>
+              <p>El informe no fue un documento formal, sino la conclusión de que el proyecto era viable. Por eso luego se presentaron a los fondos de ANII y Emprendedores y consiguieron la plata para seguir y se fueron expandiendo a otros países.</p>
+            </div>
+          </li>
+        </ol>
+
+        <!-- Información primaria y secundaria: dos tarjetas lado a lado -->
+        <div class="info-grid">
+          <article class="info-card reveal">
+            <div class="var-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>INFORMACIÓN PRIMARIA:</h3>
+            <p>Es la que ellos mismos generaron. Al principio fue ir a hablar con los 40 restaurantes de Montevideo. Hoy en día utilizan las encuestas que ellos mismos mandan luego que llega el pedido, o cuando prueban un nuevo servicio consultan si les gusto. Información que ellos generan para tomar decisiones.</p>
+          </article>
+          <article class="info-card info-card--blue reveal">
+            <div class="var-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
+            <h3>INFORMACIÓN SECUNDARIA:</h3>
+            <p>La que utilizan para entender el mercado.</p>
+            <p>En una entrevista ellos mismo pensaron en la idea como ¨una web como mercado libre pero de comida¨</p>
+            <p>También tenían a disposición:</p>
+            <ul class="bullets">
+              <li>Datos de cuánta gente utiliza internet</li>
+              <li>Informes de competencia</li>
+              <li>Ubicación de los restaurantes que estaban en google como también sus reseñas</li>
+            </ul>
+            <p class="info-card__end">Al ser una de las primeras e-commerce ellos generaron gran parte de su información.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. ESTRATEGIAS DE POSICIONAMIENTO (Rama)
+         (contenido movido tal cual desde la sección anterior)
+         ============================================================ -->
+    <section class="section section--tint" id="estrategias">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="badge">6</span> Responsable: Rama</p>
+          <h2 class="section-title">Estrategias de Posicionamiento</h2>
+        </div>
+
+        <div class="pos-grid">
+          <article class="pos-card reveal">
+            <div class="pos-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+            <h3>Posicionamiento según sus atributos:</h3>
+            <p>PedidosYa cuenta con la red más grande de comercios adheridos del país (restaurantes, kioscos, farmacias, supermercados, entre otros) y la mayor cobertura geográfica, ya que llega a muchas más ciudades que sus competidores. Además, tiene más antigüedad que otras marcas: existe desde el año 2009 y fue una de las pioneras en el rubro de las plataformas digitales de delivery en América Latina.</p>
+          </article>
+
+          <article class="pos-card pos-card--wide reveal">
+            <div class="pos-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+            <h3>Posicionamiento según sus beneficios:</h3>
+            <p>La empresa le ofrece al cliente muchos beneficios, como comodidad (recibe todo en su casa sin moverse), ahorro de tiempo (no tiene que ir al local ni hacer fila), ahorro de dinero (gracias a cupones, descuentos y costos de envío baratos), variedad (encuentra comida, supermercado, farmacia y más en una sola app) y rapidez en la entrega. Un ejemplo de esto es PedidosYa Market, su propio supermercado que entrega productos en menos tiempo y además ofrece ofertas muy competitivas, lo que es una característica muy diferenciable al resto, por lo que escala mucho más su posicionamiento.</p>
+          </article>
+
+          <article class="pos-card reveal">
+            <div class="pos-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <h3>Posicionamiento según su uso o aplicación:</h3>
+            <p>La marca se asocia a momentos concretos de la vida cotidiana, como cenar un viernes, darse un antojo a la noche o quedarse sin algo en casa.</p>
+          </article>
+
+          <article class="pos-card reveal">
+            <div class="pos-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Posicionamiento según su usuario:</h3>
+            <p>PedidosYa funciona como una plataforma de dos lados, por lo que tiene dos tipos de target. Por un lado, los consumidores de grandes ciudades y del interior del país que buscan comprar productos o pedir comida de manera rápida y cómoda. Por otro lado, los comercios (restaurantes, kioscos, farmacias, supermercados, entre otros) que buscan vender más y llegar a nuevos clientes a través de la app.</p>
+          </article>
+
+          <article class="pos-card pos-card--red reveal">
+            <div class="pos-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <h3>Posicionamiento frente a la competencia:</h3>
+            <p>PedidosYa se posiciona como la marca líder del delivery en Argentina, por delante de competidores como Rappi. Su liderazgo se basa en su mayor cobertura geográfica, en la cantidad de comercios adheridos, en su antigüedad y en su calidad de servicio.</p>
+          </article>
+
+          <article class="pos-card reveal">
+            <div class="pos-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <h3>Posicionamiento según su calidad o precio:</h3>
+            <p>La empresa no sólo ofrece comodidad, sino también buena relación entre calidad y precio. En cuanto al precio, mantiene costos de envío competitivos y ofrece cupones y descuentos. Un ejemplo es PedidosYa Plus, una suscripción mensual que le ofrece al cliente envíos gratis y descuentos exclusivos. En cuanto a la calidad, brinda una app práctica y fácil de usar, y ofrece reembolsos en caso de un mal envío o de un error del comercio.</p>
+          </article>
+
+          <article class="pos-card reveal">
+            <div class="pos-card__icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <h3>Posicionamiento según su estilo de vida:</h3>
+            <p>la marca se asocia a un estilo de vida práctico, cómodo y de inmediatez, pensado para personas con rutinas aceleradas o poco tiempo libre.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <p class="footer__label">Integrantes:</p>
+        <ul class="footer__team">
+          <li>- Esmeralda Martinez</li>
+          <li>- Ivan Ruiz</li>
+          <li>- Luciano Caballaro</li>
+          <li>- Diana Luz Atahuichi López</li>
+          <li>- Ramiro Verdinelli</li>
+          <li>- René Herrera</li>
+        </ul>
+      </div>
+      <div class="footer__info">
+        <p class="footer__title">Análisis de PedidosYa.</p>
+        <p>Comercialización Internacional,  2do Cuatrimestre.</p>
+        <p>Instituto de Capacitación Aduanera.</p>
+        <p>Octubre 2026.</p>
+        <a class="btn btn--light" href="#inicio">
+          Volver arriba
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </a>
+      </div>
+      <figure class="media media--rider" data-file="img/repartidor.png">
+        <img src="img/repartidor.png" alt="Ilustración de un repartidor de PedidosYa en moto" loading="lazy" onerror="this.parentNode.classList.add('is-missing')">
+      </figure>
+    </div>
+    <p class="footer__note container">Presentación académica del trabajo final. No es un sitio oficial de PedidosYa.</p>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       1) GSAP y ScrollTrigger desde CDN (las animaciones)
+       2) Nuestro archivo main.js
+       Si no hay internet, el sitio se lee igual: solo no hay animaciones.
+       ============================================================ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js?v=20261002" defer></script>
+</body>
+</html>

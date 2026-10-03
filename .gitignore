@@ -1,0 +1,8 @@
+# Archivos que NO se suben (quedan solo en la PC)
+# El PDF del trabajo
+*.pdf
+# Copias sueltas de imágenes fuera de img/ (el sitio usa las de img/)
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
