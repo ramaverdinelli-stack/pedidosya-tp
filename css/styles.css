@@ -461,6 +461,72 @@ a { color: inherit; }
 .pos-card--red { background: linear-gradient(135deg, var(--rojo), #ff3d7f); color: #fff; }
 .pos-card--red .pos-card__icon { background: rgba(255,255,255,.2); color: #fff; }
 
+/* ---------- 10a. POSICIONAMIENTO Y NICHOS (René) ---------- */
+/* Portada de la sección: recuadro rojo */
+.pn-cover {
+  background: linear-gradient(135deg, var(--rojo), #ff3d7f); color: #fff;
+  border-radius: var(--radio); padding: 40px; box-shadow: var(--sombra);
+}
+.pn-cover p { margin: 0; }
+.pn-cover__top { font-size: .8rem; font-weight: 700; letter-spacing: .14em; opacity: .9; }
+.pn-cover__title { font-size: clamp(1.5rem, 3.4vw, 2.3rem); font-weight: 800; line-height: 1.2; margin: 12px 0 8px !important; letter-spacing: -.01em; }
+.pn-cover__brand { font-weight: 800; letter-spacing: .08em; }
+.pn-cover__chip {
+  display: inline-block; margin-top: 18px; background: rgba(255,255,255,.2);
+  padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: .9rem;
+}
+
+/* Cada punto (1 a 5): título, subtítulo, texto y nota de fuente */
+.pn-point { margin-top: 72px; }
+.pn-kicker { color: var(--rojo); font-weight: 700; margin: 0 0 16px; padding-left: 21px; }
+.pn-text { max-width: 860px; }
+.pn-source { font-size: .8rem; color: var(--texto-2); font-style: italic; margin: 18px 0 0; }
+
+/* Tarjetas de los puntos 2, 3 y 5 */
+.pn-grid { display: grid; gap: 18px; margin-top: 24px; }
+.pn-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.pn-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.pn-card {
+  background: #fff; border-radius: var(--radio); padding: 26px; box-shadow: var(--sombra);
+  border-top: 5px solid var(--rojo); transition: transform .3s, box-shadow .3s;
+}
+.pn-card:hover { transform: translateY(-5px); box-shadow: var(--sombra-hover); }
+.pn-card__icon {
+  width: 50px; height: 50px; border-radius: 15px; display: grid; place-items: center;
+  background: var(--rojo-suave); color: var(--rojo); margin-bottom: 16px; font-size: 1.3rem;
+}
+.pn-card h4 { font-size: 1.05rem; color: var(--rojo); margin-bottom: 8px; }
+.pn-card p { font-size: .95rem; margin: 0; }
+.pn-card--blue { border-top-color: var(--celeste); }
+.pn-card--blue .pn-card__icon { background: var(--celeste-suave); color: #0096C7; }
+.pn-card--blue h4 { color: #0096C7; }
+
+/* Frase "En síntesis" del punto 2 */
+.pn-summary {
+  margin: 24px 0 0; background: #fff; border-left: 5px solid var(--celeste);
+  border-radius: var(--radio-s); padding: 16px 20px; box-shadow: var(--sombra);
+}
+
+/* Lista de nichos (punto 4): tarjetitas con viñeta */
+.pn-niches { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pn-niches li {
+  position: relative; background: #fff; border-radius: var(--radio-s);
+  padding: 18px 20px 18px 44px; box-shadow: var(--sombra); font-size: .96rem;
+}
+.pn-niches li::before {
+  content: ""; position: absolute; left: 20px; top: 1.6em;
+  width: 10px; height: 10px; border-radius: 50%; background: var(--rojo);
+}
+
+/* CONCLUSIÓN: recuadro destacado */
+.pn-conclusion {
+  margin-top: 72px; background: var(--texto); color: #fff;
+  border-radius: var(--radio); padding: 40px; box-shadow: var(--sombra);
+  border-left: 8px solid var(--rojo);
+}
+.pn-conclusion h3 { color: #ff7aa6; letter-spacing: .08em; font-size: 1.3rem; }
+.pn-conclusion__key { font-weight: 700; color: #fff; background: rgba(234,0,80,.35); border-radius: var(--radio-s); padding: 14px 18px; margin-bottom: 0; }
+
 /* ---------- 10b. INVESTIGACIÓN DE MERCADO ---------- */
 /* Frase con el número 40 grande (contador animado) */
 .inv-count {
@@ -561,6 +627,7 @@ a { color: inherit; }
   .five:nth-child(5) { grid-column: span 2; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .media--rider { grid-column: span 2; justify-self: start; max-width: 200px; }
+  .pn-grid--3, .pn-grid--4 { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -613,4 +680,8 @@ a { color: inherit; }
   .footer { padding-top: 60px; }
   .footer__grid { grid-template-columns: 1fr; gap: 30px; }
   .media--rider { grid-column: span 1; }
+  /* Posicionamiento y Nichos en celular: todo en una columna */
+  .pn-grid--3, .pn-grid--4, .pn-niches { grid-template-columns: 1fr; }
+  .pn-cover, .pn-conclusion { padding: 24px; }
+  .pn-point { margin-top: 52px; }
 }
